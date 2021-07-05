@@ -1,0 +1,23 @@
+ *{
+    /* margin: 0; */
+    padding: 0;
+  }
+  span:before{
+    content: '';
+    animation: animate infinite 8s; 
+  }
+  
+  @keyframes animate{
+  0%{
+       content: 'Auto';
+  }	
+  20%{
+    content: 'Media';
+  }
+  40%{
+    content: 'Web';
+  }
+  60%{
+    content: 'Application';
+  }
+  }
