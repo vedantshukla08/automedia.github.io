@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Auto Media</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  body {font-family: "Lato", sans-serif}
+  .mySlides {display: none}
+
+</style>
+<style>
+  .GFG {
+      background-color: white;
+      border: 2px solid black;
+      color: green;
+      padding: 5px 10px;
+      text-align: center;
+      display: inline-block;
+      font-size: 20px;
+      margin: 10px 30px;
+      cursor: pointer;
+  }
+</style>
+
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.bmw {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 5% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 50%;
+    }
+  }
+  </style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="#cars" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CARS</a>
+    <a href="#MODELS" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MODELS</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    <a href="signup.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SIGNUP</a>
+   
+    
+    <div class="w3-dropdown-hover w3-hide-small">
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#CARS" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CARS</a>
+  <a href="#MODELS" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MODELS</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="signup.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SIGNUP</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px; margin-top: 46px;">
+  
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center"> 
+     <img src="img/lambor.jpg" style="width: 100%"> 
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-20 w3-hide-small">
+      <h3>LAMBORGHINI</h3>
+      
+      <p><b>THIS IS THE SPEED!!</b></p>   
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+      
+    <img src="img/bugati.jpg" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>bugati</h3>
+      <p><b>THIS FEELS POWER</b></p>    
+    </div>
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+     
+    <img src="img/porsche.png" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-black w3-padding-28 w3-hide-small">
+      <h3>porsche</h3>
+      <p><b>LEGENDARY ONE..</b></p>    
+    </div>
+  </div>
+
+  <!-- The car Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="cars">
+    <h2 class="w3-wide">CARS</h2>
+    <p class="w3-opacity"><i>We love CARS</i></p>
+    <p class="w3-justify">AUTOMEDIAX is a simple platform and a one stop destination to scroll through all your favourites AUTOMOBILE's
+
+        Loaded with full functions and advanced feautres this single platform allows you to make your own collections of what you wanted to drive . ENJOY!!</p>
+    <div class="w3-row w3-padding-64">
+      <div class="w3-third">
+        <p>FERRARI</p>
+        <a href="https://www.ferrari.com/en-IN">
+        <img src="img/fer.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      </div>
+      <div class="w3-third">
+        <p>MASERATTI</p>
+        <a href="https://www.maseratiusa.com/us/en">
+        <img src="img/mase.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      </div>
+      <div class="w3-third">
+        <p>MCLAREN</p>
+        <a href="https://www.mclaren.com/">
+        <img src="img/mc.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      </div>
+      <div class="w3-third">
+        <p>ford</p>
+        <a href="https://www.india.ford.com/">
+        <img src="img/ford.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      </div>
+      <div class="w3-third">
+        <p>BMW</p>
+        <a href="https://www.bmw.com/en/index.html">
+        <img src="img/bmw.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      </div>
+      <div class="w3-third">
+        <p>lamborghini</p>
+        <a href="https://www.lamborghini.com/en-en">
+        <img src="img/lambo.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+      </div>
+    </div>
+    <!-- dropdown -->
+    <div class="w3-container ">
+      <h2>ALL Categories</h2>
+        <div class="w3-dropdown-click">
+        <button onclick="Function()" class="w3-button w3-black">MORE</button>
+        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border w3-light-grey ">
+          <div class="w3-third-half">
+            <a href="https://www.bentleymotors.com/en.html" class="w3-bar-item w3-button">bentley</a>
+            <img src="img/bentley.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+            </div>
+            <div class="w3-third-half">
+              <a href="https://www.tesla.com/" class="w3-bar-item w3-button">Tesla</a>
+            <img src="img/tesla.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+            </div>
+            <div class="w3-third-half">
+              <a href="https://www.bugatti.com/" class="w3-bar-item w3-button">bugatti</a>
+            <img src="img/bug.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- comparision section -->
+     <button onclick="document.getElementById('compare').style.display='block'" style="width:auto;">compare</button>
+
+     <div id="compare" class="modal">
+      <h1>this is the car section</h1>
+       <form class="modal-content animate" action="/compare" method="post" id="compare" style = "border: 1px  black #000">
+         <div class="imgcontainer">
+           <span onclick="document.getElementById('compare').style.display='none'" class="close" title="Close Modal">&times;</span>
+           <img src="img/bmw.jpg" alt="bmwr" class="bmw">
+         </div>
+     
+         <div class="container">
+           <label for="companyname"><b>COMPANY NAME</b></label>
+           <input type="text" placeholder="Enter Company Name" name="companyname" required>
+     
+           <label for="modelname"><b>model name</b></label>
+           <input type="text" placeholder="Enter Moel Name" name="modelname" required>
+
+           <label for="topspeed"><b>top Speed</b></label>
+           <input type="text" placeholder="Enter top speed" name="topspeed" required>
+
+           <label for="mileage"><b>Mileage</b></label>
+           <input type="text" placeholder="Mileage" name="mileage" required>
+
+           <label for="onroadprice"><b>On Road Price</b></label>
+           <input type="text" placeholder="Enter On Road Price" name="onroadprice" required>
+             
+           <button type="submit">search</button>
+         </div>
+       </form>
+     </div>
+    </div>
+  </div>
+
+
+  <!-- The model Section -->
+  <div class="w3-black" id="MODELS">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">MODELS</h2>
+        <p class="w3-opacity w3-center"><i>Remember to FASTEN YOUR SEATBELTS!!</i></p><br>
+       
+        <ul class="w3-ul w3-border w3-white w3-text-grey">
+          <li class="w3-padding">CAR <span class="w3-tag w3-red w3-margin-left">NONE</span></li>
+            <li class="w3-padding">MODEL <span class="w3-tag w3-red w3-margin-left">OUT OF STOCK</span></li>
+            <li class="w3-padding">RACE <span class="w3-badge w3-right w3-margin-right">$</span></li>
+          </ul>
+
+          <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+              <img src="img/tesla.jpg" alt="TESLA" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+              <p><b>TESLA</b></p>
+              <p class="w3-opacity">USA</p>
+              <p>READY TO WELCOME FUTURE </p>
+              <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">VIEW</button>
+            </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+            <img src="img/bentley.jpg" alt="bentley" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+              <p><b>bentley</b></p>
+              <p class="w3-opacity">ENGLAND</p>
+              <p>BONDS FAVOURITE 007</p>
+              <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">VIEW</button>
+            </div>
+          </div>
+          <div class="w3-third w3-margin-bottom">
+            <img src="img/rolls.jpg" alt="ROLLS ROYCE" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+              <p><b>ROLLS ROYCE</b></p>
+              <p class="w3-opacity">GERMANY</p>
+              <p>FOR THE ROYALTY!!</p>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">VIEW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="ticketModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-car w3-margin-right"></i>COLLECTIONS</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-car"></i> Tickets, $15 per person</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="How many?">
+        <p><label><i class="fa fa-user"></i> Send To</label></p>
+        <input class="w3-input w3-border" type="text" placeholder="Enter email">
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>hope you like </i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker" style="width:30px"></i> RAIPUR ,IND<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: 09090989<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+        </form>
+      </div> 
+    </div>
+
+<!-- news api -->
+  <div class="w3-container w3-content w3-padding-12" style="max-width:900px" id="NEWS">
+    <h2 class="w3-wide w3-center">NEWS</h2>
+      <p class="w3-opacity w3-center"><i>Be updated </i></p>    
+
+	<script async defer src='https://p3k.org/rss/main.js?align=initial&amp;
+	boxFillColor=%23ffead2&amp;
+	compact=false&amp;
+	fontFace=10pt%20sans-serif&amp;
+	frameColor=%23b3a28e&amp;
+	headless=false&amp;
+	height=170&amp;
+	linkColor=%232c7395&amp;
+	maxItems=99&amp;
+	radius=2&amp;
+	showXmlButton=false&amp;
+	textColor=%2395412b&amp;
+	titleBarColor=%2390a8b3&amp;
+	titleBarTextColor=%23ffead2&amp;
+	url=https%3A%2F%2Fauto.economictimes.indiatimes.com%2Frss%2Ftopstories&amp;width=9000'>
+	</script>
+  
+
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class=" w3-container w3-padding-64 w3-center  w3-hover-black w3-round-xlarge " style="max-width:800px" >
+  
+  <i class="fa fa-facebook-official w3-hover-opacity" ></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <h1>About us</h1> 
+  <p>AUTO MEDIA is a web application based on latest technologies to fill the market loop holes!!</p>
+</footer>
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function Function() {
+  var x = document.getElementById("Demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+  // Get the modal
+  var modal = document.getElementById('login');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+}
+
+  // Get the comparision
+  var modal = document.getElementById('compare');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+</script>
+</body>
+</html>
